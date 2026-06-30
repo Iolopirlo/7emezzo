@@ -1,9 +1,72 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-    <title>Test</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sette e Mezzo</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <h1>Hallo Welt</h1>
+  <div class="app">
+    <header>
+      <div>
+        <div class="eyebrow">Einzeldatei · Offline HTML · Keine Echtgeldfunktion</div>
+        <h1>Sette e Mezzo</h1>
+        <p class="subtitle">Automatischer Rundenstart, verdeckte Dealerkarte und Match bis 10 Punkte.</p>
+      </div>
+      <div class="actions">
+        <button class="primary" id="newRoundBtn">Neue Runde</button>
+        <button class="secondary" id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <section class="top-grid">
+      <div class="panel">
+        <small>Punktestand</small>
+        <div class="score">Du <span id="playerScore">0</span> : <span id="dealerScore">0</span> Dealer</div>
+      </div>
+      <div class="panel">
+        <small>Status</small>
+        <p class="status" id="message">Neue Runde automatisch gestartet.</p>
+      </div>
+      <div class="panel">
+        <small>Matchziel</small>
+        <div class="match">Bis <span id="maxScoreLabel">10</span> Punkte</div>
+      </div>
+    </section>
+
+    <div class="win-banner" id="winnerBanner"></div>
+
+    <main class="table">
+      <section class="panel">
+        <div class="hand-header">
+          <div class="hand-title">Deine Hand</div>
+          <div class="value-pill" id="playerValue">0</div>
+        </div>
+        <div class="cards" id="playerCards"></div>
+        <div class="controls">
+          <button class="primary" id="hitBtn">Karte ziehen</button>
+          <button class="secondary" id="standBtn">Stehen bleiben</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="hand-header">
+          <div class="hand-title">Dealer</div>
+          <div class="value-pill" id="dealerValue">?</div>
+        </div>
+        <div class="cards" id="dealerCards"></div>
+        <p class="muted">Die erste Dealerkarte bleibt verdeckt, bis die Runde endet.</p>
+      </section>
+    </main>
+
+    <section class="info-grid">
+      <div class="panel"><strong>Kartenwerte:</strong><br>Asso = 1, 2–7 = Nennwert, Fante/Cavallo/Re = 0.5.</div>
+      <div class="panel"><strong>Auto-Start:</strong><br>Beim Öffnen und nach jeder Runde wird automatisch neu gegeben.</div>
+      <div class="panel"><strong>Assets:</strong><br>Alle Kartenbilder und die Rückseite sind direkt in dieser HTML-Datei eingebettet.</div>
+    </section>
+  </div>
+
+<script src="./script.js" defer></script>
 </body>
 </html>
